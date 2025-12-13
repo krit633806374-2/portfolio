@@ -81,8 +81,9 @@ export default function HeroSection() {
               {/* Contact Me Button - Right */}
               <motion.a
                 href="#"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-black font-medium text-sm hover:bg-gray-200 transition-all"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-black font-medium text-sm hover:bg-gray-500 hover:text-white transition-all"
                 whileHover={{ scale: 1.05 }}
+
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.svg 

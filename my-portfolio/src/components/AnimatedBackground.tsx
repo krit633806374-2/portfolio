@@ -5,11 +5,11 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion';
 export default function AnimatedBackground() {
   const { scrollY } = useViewportScroll();
 
-  // Create smooth scroll-based transformations
-  const translateY1 = useTransform(scrollY, [0, 1000], [0, 150]);
-  const translateY2 = useTransform(scrollY, [0, 1000], [0, -150]);
-  const translateY3 = useTransform(scrollY, [0, 1000], [0, 100]);
-  const translateY4 = useTransform(scrollY, [0, 1000], [0, -100]);
+  // Create smooth scroll-based transformations with stronger parallax effect
+  const translateY1 = useTransform(scrollY, [0, 1000], [0, 300]);
+  const translateY2 = useTransform(scrollY, [0, 1000], [0, -300]);
+  const translateY3 = useTransform(scrollY, [0, 1000], [0, 250]);
+  const translateY4 = useTransform(scrollY, [0, 1000], [0, -250]);
 
   return (
     <div className="fixed inset-0 bg-black overflow-hidden z-0">
@@ -41,12 +41,12 @@ export default function AnimatedBackground() {
 
       {/* Additional subtle blobs for more depth */}
       <motion.div
-        style={{ y: useTransform(scrollY, [0, 1000], [0, 200]) }}
+        style={{ y: useTransform(scrollY, [0, 1000], [0, 350]) }}
         className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-white rounded-full filter blur-3xl opacity-4"
       />
 
       <motion.div
-        style={{ y: useTransform(scrollY, [0, 1000], [0, -120]) }}
+        style={{ y: useTransform(scrollY, [0, 1000], [0, -280]) }}
         className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-white rounded-full filter blur-3xl opacity-5"
       />
     </div>

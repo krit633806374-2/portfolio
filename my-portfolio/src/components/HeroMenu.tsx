@@ -7,6 +7,7 @@ const menuItems = ['Home', 'AboutMe', 'Stack&Tools', 'Experience'];
 
 export default function HeroMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState('Home');
 
   return (
     <motion.div
@@ -51,9 +52,12 @@ export default function HeroMenu() {
                 paddingRight: 0
               }}
               transition={{ duration: 0.2 }}
-              className="text-white font-bold text-sm whitespace-nowrap hover:text-gray-300 transition-colors"
+              className={`text-white font-bold text-sm whitespace-nowrap transition-colors px-0.5 py-1 w-fit relative ${
+                selectedItem === item ? 'after:content-[\'\'] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/2 after:h-0.5 after:bg-white after:rounded-full' : 'hover:text-gray-300'
+              }`}
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                 e.preventDefault();
+                setSelectedItem(item);
                 if (item.toLowerCase() === 'home') {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
