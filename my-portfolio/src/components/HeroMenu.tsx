@@ -30,7 +30,7 @@ export default function HeroMenu() {
           }}
           transition={{ duration: 0.2 }}
         >
-          menu +
+          menu
         </motion.span>
 
         {/* Menu Items */}
@@ -52,7 +52,7 @@ export default function HeroMenu() {
               }}
               transition={{ duration: 0.2 }}
               className="text-white font-bold text-sm whitespace-nowrap hover:text-gray-300 transition-colors"
-              onClick={(e) => {
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                 e.preventDefault();
                 const section = document.querySelector(`[data-section="${item.toLowerCase()}"]`);
                 section?.scrollIntoView({ behavior: 'smooth' });
