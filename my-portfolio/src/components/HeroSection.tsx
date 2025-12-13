@@ -24,7 +24,7 @@ export default function HeroSection() {
             style={{ x: useTransform(scrollY, [0, 500], [0, -1000]) }}
             className="absolute top-16"
           >
-            <h1 className="text-[160px] font-black text-white leading-none whitespace-nowrap drop-shadow-2xl">
+            <h1 className="text-[180px] font-black text-white leading-none whitespace-nowrap drop-shadow-2xl">
               Web
             </h1>
           </motion.div>
@@ -37,7 +37,7 @@ export default function HeroSection() {
             style={{ x: useTransform(scrollY, [0, 500], [0, 1000]) }}
             className="absolute top-52"
           >
-            <h1 className="text-[160px] font-black text-white leading-none whitespace-nowrap drop-shadow-2xl">
+            <h1 className="text-[180px] font-black text-white leading-none whitespace-nowrap drop-shadow-2xl">
               Designer
             </h1>
           </motion.div>
