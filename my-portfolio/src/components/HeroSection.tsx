@@ -11,7 +11,8 @@ export default function HeroSection() {
   const designerInitialX = -1000; // Start from left
   
   // Profile image scroll transform - moves down when scrolling
-  const profileTranslateY = useTransform(scrollY, [0, 300], [0, 200]);
+  const profileTranslateY = useTransform(scrollY, [0, 400], [0, 600]);
+  const profileOpacity = useTransform(scrollY, [200, 400], [1, 0]);
 
   return (
     <div className="relative w-full h-auto bg-transparent overflow-hidden flex flex-col items-center justify-start pt-16 pb-4">
@@ -49,7 +50,7 @@ export default function HeroSection() {
         {/* Center Profile Image with Buttons */}
         <motion.div 
           className="relative z-20 mt-1"
-          style={{ y: profileTranslateY }}
+          style={{ y: profileTranslateY, opacity: profileOpacity }}
         >
           {/* Image */}
           <div className="relative w-fit">
