@@ -147,18 +147,18 @@ export default function AboutMeSection() {
             className="max-w-3xl"
           >
             {/* Title with Icon and Underline */}
-            <div className="flex flex-col items-end gap-3">
-              <h1 className="text-8xl md:text-9xl font-black text-white">
+            <div className="flex flex-col items-end gap-2">
+              <h1 className="text-8xl md:text-9xl font-black text-white leading-tight">
                 About Me
               </h1>
               {/* Rounded Underline */}
               <motion.div 
-                className="h-1.5 rounded-full bg-cyan-400"
+                className="h-2 rounded-full bg-cyan-400"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true, margin: '-100px' }}
-                style={{ originX: 1, width: '50%' }}
+                style={{ originX: 1, width: '45%', minWidth: '80px' }}
               />
             </div>
           </motion.div>
@@ -451,18 +451,18 @@ export default function AboutMeSection() {
             viewport={{ once: true, margin: '-100px' }}
             className="mb-20 flex justify-end"
           >
-            <div className="flex flex-col items-end gap-3">
-              <h1 className="text-8xl md:text-9xl font-black text-white">
+            <div className="flex flex-col items-end gap-2">
+              <h1 className="text-8xl md:text-9xl font-black text-white leading-tight">
                 Skills
               </h1>
               {/* Rounded Underline */}
               <motion.div 
-                className="h-1.5 rounded-full bg-cyan-400"
+                className="h-2 rounded-full bg-cyan-400"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true, margin: '-100px' }}
-                style={{ originX: 1, width: '50%' }}
+                style={{ originX: 1, width: '35%', minWidth: '60px' }}
               />
             </div>
           </motion.div>
