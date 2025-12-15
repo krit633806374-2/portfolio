@@ -3,6 +3,9 @@
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect, useMemo, useRef } from 'react';
+import dynamic from 'next/dynamic';
+
+const Lanyard = dynamic(() => import('./Lanyard'), { ssr: false });
 
 export default function AboutMeSection() {
   const [displayText, setDisplayText] = useState('');
@@ -136,7 +139,7 @@ export default function AboutMeSection() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, margin: '-100px' }}
-          className="mb-16 flex justify-end"
+          className="mb-16 flex justify-end relative"
         >
           {/* Title, Line, and Description - All in One Container */}
           <motion.div
@@ -153,13 +156,16 @@ export default function AboutMeSection() {
               </h1>
               {/* Rounded Underline */}
               <motion.div 
-                className="h-2 rounded-full bg-cyan-400"
+                className="h-2 rounded-full bg-cyan-400 relative"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: false, margin: '-100px' }}
                 style={{ originX: 1, width: '45%', minWidth: '80px' }}
-              />
+              >
+                {/* Lanyard hanging from underline */}
+                <div className="absolute top-full left-1/2 w-0.5 h-16 bg-gradient-to-b from-cyan-400 to-cyan-500 transform -translate-x-1/2"></div>
+              </motion.div>
             </div>
           </motion.div>
         </motion.div>
