@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect, useMemo, useRef } from 'react';
 
@@ -465,28 +466,36 @@ export default function AboutMeSection() {
             
             <p className="text-xl md:text-2xl font-semibold text-cyan-400 mb-6 indent-8">Stack & Technologies</p>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-8 justify-center">
               {[
-                { name: 'HTML', color: 'from-orange-600 to-orange-800' },
-                { name: 'CSS', color: 'from-blue-600 to-blue-800' },
-                { name: 'JavaScript', color: 'from-yellow-500 to-yellow-700' },
-                { name: 'TypeScript', color: 'from-blue-500 to-blue-700' },
-                { name: 'React', color: 'from-cyan-500 to-cyan-700' },
-                { name: 'Next.JS', color: 'from-gray-700 to-gray-900' },
-                { name: 'Tailwind CSS', color: 'from-cyan-600 to-cyan-800' },
-                { name: 'VS Code', color: 'from-blue-500 to-blue-700' },
-                { name: 'GitHub', color: 'from-gray-600 to-gray-800' }
+                { name: 'HTML', icon: 'html.png' },
+                { name: 'CSS', icon: 'css.png' },
+                { name: 'JavaScript', icon: 'jss.png' },
+                { name: 'TypeScript', icon: 'ts.png' },
+                { name: 'React', icon: 'react.png' },
+                { name: 'Next.JS', icon: 'next.png' },
+                { name: 'Tailwind CSS', icon: 'tw.png' },
+                { name: 'VS Code', icon: 'vscode.png' },
+                { name: 'GitHub', icon: 'gh.png' }
               ].map((tool, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.05 }}
-                  whileHover={{ y: -5 }}
-                  className={`px-6 py-4 rounded-lg bg-gradient-to-br ${tool.color} text-white text-center cursor-pointer transition-all hover:shadow-lg hover:shadow-white/20`}
-                >
-                  <p className="text-sm font-semibold">{tool.name}</p>
-                </motion.div>
+                <div key={idx} className="flex flex-col items-center gap-3">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    whileHover={{ y: -8 }}
+                    className="relative p-6 rounded-2xl border border-gray-500 bg-gradient-to-br from-gray-800 to-gray-900 hover:border-gray-400 transition-all duration-300 cursor-pointer overflow-hidden w-32 h-32 flex items-center justify-center"
+                  >
+                    <Image
+                      src={`/${tool.icon}`}
+                      alt={tool.name}
+                      width={86}
+                      height={86}
+                      className="w-24 h-24 object-contain"
+                    />
+                  </motion.div>
+                  <p className="text-sm font-light text-white text-center whitespace-nowrap">{tool.name}</p>
+                </div>
               ))}
             </div>
           </motion.div>
@@ -507,23 +516,30 @@ export default function AboutMeSection() {
             
             <p className="text-xl md:text-2xl font-semibold text-cyan-400 mb-6 indent-8">Tools & Platforms</p>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-8 justify-center">
               {[
-                { name: 'VS Code', color: 'from-blue-600 to-blue-800' },
-                { name: 'GitHub', color: 'from-gray-700 to-gray-900' },
-                { name: 'Figma', color: 'from-purple-600 to-purple-800' },
-                { name: 'Canva', color: 'from-blue-500 to-purple-600' }
+                { name: 'Wix', icon: 'wixx.png' },
+                { name: 'Figma', icon: 'fm.png' },
+                { name: 'Canva', icon: 'canva.png' }
               ].map((tool, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.05 }}
-                  whileHover={{ y: -5 }}
-                  className={`px-6 py-4 rounded-lg bg-gradient-to-br ${tool.color} text-white text-center cursor-pointer transition-all hover:shadow-lg hover:shadow-white/20`}
-                >
-                  <p className="text-sm font-semibold">{tool.name}</p>
-                </motion.div>
+                <div key={idx} className="flex flex-col items-center gap-3">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    whileHover={{ y: -8 }}
+                    className="relative p-6 rounded-2xl border border-gray-500 bg-gradient-to-br from-gray-800 to-gray-900 hover:border-gray-400 transition-all duration-300 cursor-pointer overflow-hidden w-32 h-32 flex items-center justify-center"
+                  >
+                    <Image
+                      src={`/${tool.icon}`}
+                      alt={tool.name}
+                      width={86}
+                      height={86}
+                      className="w-24 h-24 object-contain"
+                    />
+                  </motion.div>
+                  <p className="text-sm font-light text-white text-center whitespace-nowrap">{tool.name}</p>
+                </div>
               ))}
             </div>
           </motion.div>
