@@ -3,9 +3,7 @@
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect, useMemo, useRef } from 'react';
-import dynamic from 'next/dynamic';
-
-const Lanyard = dynamic(() => import('./Lanyard'), { ssr: false });
+import Lanyard from './Lanyard';
 
 export default function AboutMeSection() {
   const [displayText, setDisplayText] = useState('');
@@ -139,7 +137,7 @@ export default function AboutMeSection() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, margin: '-100px' }}
-          className="mb-16 flex justify-end relative"
+          className="mb-16 flex justify-end"
         >
           {/* Title, Line, and Description - All in One Container */}
           <motion.div
@@ -452,7 +450,7 @@ export default function AboutMeSection() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, margin: '-100px' }}
-            className="mb-20 flex justify-end relative"
+            className="mb-20 flex justify-end"
           >
             <div className="flex flex-col items-end gap-2">
               <h1 className="text-8xl md:text-9xl font-black text-white leading-tight">
@@ -460,7 +458,7 @@ export default function AboutMeSection() {
               </h1>
               {/* Rounded Underline */}
               <motion.div 
-                className="h-2 rounded-full bg-cyan-400 relative"
+                className="h-2 rounded-full bg-cyan-400"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -470,8 +468,8 @@ export default function AboutMeSection() {
             </div>
           </motion.div>
 
-          {/* Lanyard Component */}
-          <div className="flex justify-end -mt-20 mb-20">
+          {/* Lanyard Component - Hanging from Skills underline */}
+          <div className="flex justify-end mb-20">
             <Lanyard />
           </div>
 
