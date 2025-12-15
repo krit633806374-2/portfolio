@@ -466,12 +466,14 @@ export default function AboutMeSection() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: false, margin: '-100px' }}
                 style={{ originX: 1, width: '35%', minWidth: '60px' }}
-              >
-                {/* Lanyard hanging from underline */}
-                <div className="absolute top-full left-1/2 w-0.5 h-16 bg-gradient-to-b from-cyan-400 to-cyan-500 transform -translate-x-1/2"></div>
-              </motion.div>
+              />
             </div>
           </motion.div>
+
+          {/* Lanyard Component */}
+          <div className="flex justify-end -mt-20 mb-20">
+            <Lanyard />
+          </div>
 
           {/* DEVELOP Section */}
           <motion.div
