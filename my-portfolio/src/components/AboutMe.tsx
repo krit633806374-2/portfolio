@@ -51,6 +51,8 @@ export default function AboutMe() {
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
+            </motion.div>
+          </motion.div>
 
         {/* Who I Am Section */}
         <motion.div

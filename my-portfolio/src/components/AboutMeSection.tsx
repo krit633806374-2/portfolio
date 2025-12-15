@@ -130,13 +130,13 @@ export default function AboutMeSection() {
         className="relative w-full min-h-screen bg-transparent flex items-center justify-center py-20 px-6"
       >
       <div className="max-w-7xl w-full">
-        {/* Header Section - Centered */}
+        {/* Header Section - Right Aligned */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: '-100px' }}
-          className="text-center mb-16"
+          className="mb-16 flex justify-end"
         >
           {/* Title, Line, and Description - All in One Container */}
           <motion.div
@@ -144,15 +144,22 @@ export default function AboutMeSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
-            className="max-w-3xl mx-auto"
+            className="max-w-3xl"
           >
             {/* Title with Icon and Underline */}
-            <div className="inline-block w-full">
-              <div className="flex items-center justify-center gap-3 mb-2">
-                <h1 className="text-6xl md:text-7xl font-black text-white">
-                  About Me
-                </h1>
-              </div>
+            <div className="flex flex-col items-end gap-3">
+              <h1 className="text-8xl md:text-9xl font-black text-white">
+                About Me
+              </h1>
+              {/* Rounded Underline */}
+              <motion.div 
+                className="h-1.5 rounded-full bg-cyan-400"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true, margin: '-100px' }}
+                style={{ originX: 1, width: '50%' }}
+              />
             </div>
           </motion.div>
         </motion.div>
@@ -442,11 +449,22 @@ export default function AboutMeSection() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-100px' }}
-            className="text-center mb-20"
+            className="mb-20 flex justify-end"
           >
-            <h1 className="text-6xl md:text-7xl font-black text-white">
-              Skills
-            </h1>
+            <div className="flex flex-col items-end gap-3">
+              <h1 className="text-8xl md:text-9xl font-black text-white">
+                Skills
+              </h1>
+              {/* Rounded Underline */}
+              <motion.div 
+                className="h-1.5 rounded-full bg-cyan-400"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true, margin: '-100px' }}
+                style={{ originX: 1, width: '50%' }}
+              />
+            </div>
           </motion.div>
 
           {/* DEVELOP Section */}
@@ -466,7 +484,8 @@ export default function AboutMeSection() {
             
             <p className="text-xl md:text-2xl font-semibold text-cyan-400 mb-6 indent-8">Stack & Technologies</p>
             
-            <div className="flex flex-wrap gap-8 justify-left">
+            {/* Row 1 - Frontend Core Stack */}
+            <div className="flex flex-wrap gap-6 justify-left mb-8">
               {[
                 { name: 'HTML', icon: 'html.png' },
                 { name: 'CSS', icon: 'css.png' },
@@ -474,6 +493,32 @@ export default function AboutMeSection() {
                 { name: 'TypeScript', icon: 'ts.png' },
                 { name: 'React', icon: 'react.png' },
                 { name: 'Next.JS', icon: 'next.png' },
+              ].map((tool, idx) => (
+                <div key={idx} className="flex flex-col items-center gap-3">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    whileHover={{ y: -8 }}
+                    className="relative p-6 rounded-2xl border border-gray-300 bg-gradient-to-br from-gray-100 to-gray-250 hover:border-gray-400 transition-all duration-300 cursor-pointer overflow-hidden w-32 h-32 flex items-center justify-center"
+                  >
+                    <Image
+                      src={`/${tool.icon}`}
+                      alt={tool.name}
+                      width={86}
+                      height={86}
+                      className="w-24 h-24 object-contain"
+                      style={{ transform: tool.scale ? `scale(${tool.scale})` : 'scale(1)' }}
+                    />
+                  </motion.div>
+                  <p className="text-sm font-light text-gray-300 text-center whitespace-nowrap">{tool.name}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Row 2 - Tools & Development */}
+            <div className="flex flex-wrap gap-6 justify-left">
+              {[
                 { name: 'Tailwind CSS', icon: 'tw.png' },
                 { name: 'Vite', icon: 'vt.png', scale: '1.7' },
                 { name: 'VS Code', icon: 'vscode.png' },
@@ -497,7 +542,7 @@ export default function AboutMeSection() {
                       style={{ transform: tool.scale ? `scale(${tool.scale})` : 'scale(1)' }}
                     />
                   </motion.div>
-                  <p className="text-sm font-light text-gray-400 text-center whitespace-nowrap">{tool.name}</p>
+                  <p className="text-sm font-light text-gray-300 text-center whitespace-nowrap">{tool.name}</p>
                 </div>
               ))}
             </div>
@@ -519,7 +564,7 @@ export default function AboutMeSection() {
             
             <p className="text-xl md:text-2xl font-semibold text-cyan-400 mb-6 indent-8">Tools & Platforms</p>
             
-            <div className="flex flex-wrap gap-8 justify-left">
+            <div className="flex flex-wrap gap-6 justify-left">
               {[
                 { name: 'Wix', icon: 'wixx.png' },
                 { name: 'Figma', icon: 'fm.png' },
@@ -541,7 +586,7 @@ export default function AboutMeSection() {
                       className="w-24 h-24 object-contain"
                     />
                   </motion.div>
-                  <p className="text-sm font-light text-gray-400 text-center whitespace-nowrap">{tool.name}</p>
+                  <p className="text-sm font-light text-gray-300 text-center whitespace-nowrap">{tool.name}</p>
                 </div>
               ))}
             </div>
