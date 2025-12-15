@@ -135,7 +135,7 @@ export default function AboutMeSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: false, margin: '-100px' }}
           className="mb-16 flex justify-end"
         >
           {/* Title, Line, and Description - All in One Container */}
@@ -143,7 +143,7 @@ export default function AboutMeSection() {
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: false, margin: '-100px' }}
             className="max-w-3xl"
           >
             {/* Title with Icon and Underline */}
@@ -157,7 +157,7 @@ export default function AboutMeSection() {
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true, margin: '-100px' }}
+                viewport={{ once: false, margin: '-100px' }}
                 style={{ originX: 1, width: '45%', minWidth: '80px' }}
               />
             </div>
@@ -448,7 +448,7 @@ export default function AboutMeSection() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: false, margin: '-100px' }}
             className="mb-20 flex justify-end"
           >
             <div className="flex flex-col items-end gap-2">
@@ -461,7 +461,7 @@ export default function AboutMeSection() {
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true, margin: '-100px' }}
+                viewport={{ once: false, margin: '-100px' }}
                 style={{ originX: 1, width: '35%', minWidth: '60px' }}
               />
             </div>
